@@ -12,9 +12,9 @@ import { AngularFireList } from 'angularfire2/database';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit, OnChanges {
-  // @ts-ignore
-  // feed!: AngularFireList<ChatMessage>;
-  feed!: any;
+  feed!: Observable<ChatMessage[]>;
+  // feed: Observable<ChatMessage[string]>;
+  // feed!: any;
   // feed!: AngularFireList;
   constructor(private chat: ChatService) { }
 
