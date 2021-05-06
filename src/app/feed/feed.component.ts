@@ -1,10 +1,8 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { ChatService } from '../services/chat.service';
-import {Observable, of, from } from 'rxjs';
-import { ChatMessage } from '../models/chat-message.model';
-import { AngularFireList } from 'angularfire2/database';
-
-
+import {Component, OnInit, OnChanges} from '@angular/core';
+import {ChatService} from '../services/chat.service';
+import {ChatMessage} from '../models/chat-message.model';
+import {AngularFireList} from 'angularfire2/database';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-feed',
@@ -18,14 +16,12 @@ export class FeedComponent implements OnInit, OnChanges {
   // feed!: AngularFireList;
   constructor(private chat: ChatService) { }
 
-  // tslint:disable-next-line:typedef
-  ngOnInit() {
+  ngOnInit(): void {
     console.log('feed initializing...');
     this.feed = this.chat.getMessages().valueChanges();
   }
 
-  // tslint:disable-next-line:typedef
-  ngOnChanges() {
+  ngOnChanges(): void {
     this.feed = this.chat.getMessages().valueChanges();
   }
 }

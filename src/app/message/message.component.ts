@@ -20,8 +20,8 @@ export class MessageComponent implements OnInit {
 
   constructor() { }
 
-  // tslint:disable-next-line:typedef
-  ngOnInit(chatMessage = this.chatMessage) {
+  ngOnInit(chatMessage = this.chatMessage): void {
+    console.log(chatMessage.message);
     this.messageContent = chatMessage.message;
     this.timeStamp = chatMessage.timeSent;
     this.userEmail = chatMessage.email;
